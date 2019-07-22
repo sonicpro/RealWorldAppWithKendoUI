@@ -38,7 +38,7 @@ namespace KendoDreamCarShopper.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("EntityStore", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {
