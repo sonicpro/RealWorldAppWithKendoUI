@@ -24,3 +24,6 @@ bld/
 
 # packages
 packages/
+
+# SQL Server files
+App_Data/

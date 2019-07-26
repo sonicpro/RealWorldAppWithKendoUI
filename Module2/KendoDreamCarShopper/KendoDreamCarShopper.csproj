@@ -30,6 +30,8 @@
     </SccProvider>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -276,6 +278,21 @@
     <Content Include="Content\images\Models\LamborghiniAventadorLP700-4\Rear_LowRez.png" />
     <Content Include="Content\images\Models\LamborghiniAventadorLP700-4\Side_HighRez.png" />
     <Content Include="Content\images\Models\LamborghiniAventadorLP700-4\Side_LowRez.png" />
+    <Content Include="Content\kendo.common.min.css" />
+    <Content Include="Content\themes\base\Default\editor.png" />
+    <Content Include="Content\themes\base\Default\imagebrowser.png" />
+    <Content Include="Content\themes\base\Default\indeterminate.gif" />
+    <Content Include="Content\themes\base\Default\loading-image.gif" />
+    <Content Include="Content\themes\base\Default\loading.gif" />
+    <Content Include="Content\themes\base\Default\loading_2x.gif" />
+    <Content Include="Content\themes\base\Default\markers.png" />
+    <Content Include="Content\themes\base\Default\markers_2x.png" />
+    <Content Include="Content\themes\base\Default\slider-h.gif" />
+    <Content Include="Content\themes\base\Default\slider-v.gif" />
+    <Content Include="Content\themes\base\Default\sprite.png" />
+    <Content Include="Content\themes\base\Default\sprite_2x.png" />
+    <Content Include="Content\themes\base\Default\sprite_kpi.png" />
+    <Content Include="Content\themes\base\Default\sprite_kpi_2x.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -304,6 +321,7 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\kendo.default.min.css" />
     <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -332,6 +350,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\kendo.common.min.css.map" />
+    <Content Include="Content\themes\base\kendo.default.min.css.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\App\Views\Maintenance\modelDetails.js" />
@@ -348,6 +368,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\kendo.web.min.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
@@ -398,6 +419,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Maintenance\Index.cshtml" />
+    <Content Include="Scripts\kendo.web.min.js.map" />
     <None Include="Scripts\utils.js.bundle" />
     <Content Include="Scripts\utils.min.js.map">
       <DependentUpon>utils.js.bundle</DependentUpon>
