@@ -21,6 +21,17 @@
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
+                    <ul id="menu">
+                        <li>Makes</li>
+                        <li>Maintenance
+                            <ul>
+                                <li><a href="/Maintenance/Makes">Makes</a></li>
+                                <li><a href="/Maintenance/Models">Models</a></li>
+                            </ul>
+                        </li>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
                 </div>
             </div>
         </header>
@@ -41,6 +52,7 @@
         </footer>
         <script src="~/Scripts/utils.min.js"></script>
         <script src="~/Scripts/kendo.web.min.js"></script>
+        <script src="~/Scripts/App/Views/Shared/layout.js"></script>
         @RenderSection("scripts", required: false)
     </body>
 </html>

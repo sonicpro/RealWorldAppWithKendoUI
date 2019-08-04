@@ -379,6 +379,7 @@
     <Content Include="Scripts\utils.min.js">
       <DependentUpon>utils.js.bundle</DependentUpon>
     </Content>
+    <Content Include="Scripts\App\Views\Shared\layout.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
