@@ -189,58 +189,6 @@
     <Compile Include="Migrations\201301052141347_InitialCreate.Designer.cs">
       <DependentUpon>201301052141347_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201301052152307_AddOrderTable.cs" />
-    <Compile Include="Migrations\201301052152307_AddOrderTable.Designer.cs">
-      <DependentUpon>201301052152307_AddOrderTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301052250346_AddCostToOptionPrice.cs" />
-    <Compile Include="Migrations\201301052250346_AddCostToOptionPrice.Designer.cs">
-      <DependentUpon>201301052250346_AddCostToOptionPrice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301052316381_OrderOrderConfigSetup.cs" />
-    <Compile Include="Migrations\201301052316381_OrderOrderConfigSetup.Designer.cs">
-      <DependentUpon>201301052316381_OrderOrderConfigSetup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301061351063_AddYearToModel.cs" />
-    <Compile Include="Migrations\201301061351063_AddYearToModel.Designer.cs">
-      <DependentUpon>201301061351063_AddYearToModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301061421152_ModelImage.cs" />
-    <Compile Include="Migrations\201301061421152_ModelImage.Designer.cs">
-      <DependentUpon>201301061421152_ModelImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301061835301_TroubleShootingValidationError.cs" />
-    <Compile Include="Migrations\201301061835301_TroubleShootingValidationError.Designer.cs">
-      <DependentUpon>201301061835301_TroubleShootingValidationError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301061839508_TroubleShootingValidationError2.cs" />
-    <Compile Include="Migrations\201301061839508_TroubleShootingValidationError2.Designer.cs">
-      <DependentUpon>201301061839508_TroubleShootingValidationError2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301062100076_ChangePkNameOnOrder.cs" />
-    <Compile Include="Migrations\201301062100076_ChangePkNameOnOrder.Designer.cs">
-      <DependentUpon>201301062100076_ChangePkNameOnOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301161515045_Config.cs" />
-    <Compile Include="Migrations\201301161515045_Config.Designer.cs">
-      <DependentUpon>201301161515045_Config.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302111332390_AddLocationToMake.cs" />
-    <Compile Include="Migrations\201302111332390_AddLocationToMake.Designer.cs">
-      <DependentUpon>201302111332390_AddLocationToMake.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302202145181_ReelInScope.cs" />
-    <Compile Include="Migrations\201302202145181_ReelInScope.Designer.cs">
-      <DependentUpon>201302202145181_ReelInScope.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302231804235_UpdateModelValidation.cs" />
-    <Compile Include="Migrations\201302231804235_UpdateModelValidation.Designer.cs">
-      <DependentUpon>201302231804235_UpdateModelValidation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302231915362_UpdateMakeValidation.cs" />
-    <Compile Include="Migrations\201302231915362_UpdateMakeValidation.Designer.cs">
-      <DependentUpon>201302231915362_UpdateMakeValidation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ModelImage.cs" />
@@ -438,45 +386,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201301052141347_InitialCreate.resx">
       <DependentUpon>201301052141347_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301052152307_AddOrderTable.resx">
-      <DependentUpon>201301052152307_AddOrderTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301052250346_AddCostToOptionPrice.resx">
-      <DependentUpon>201301052250346_AddCostToOptionPrice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301052316381_OrderOrderConfigSetup.resx">
-      <DependentUpon>201301052316381_OrderOrderConfigSetup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301061351063_AddYearToModel.resx">
-      <DependentUpon>201301061351063_AddYearToModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301061421152_ModelImage.resx">
-      <DependentUpon>201301061421152_ModelImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301061835301_TroubleShootingValidationError.resx">
-      <DependentUpon>201301061835301_TroubleShootingValidationError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301061839508_TroubleShootingValidationError2.resx">
-      <DependentUpon>201301061839508_TroubleShootingValidationError2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301062100076_ChangePkNameOnOrder.resx">
-      <DependentUpon>201301062100076_ChangePkNameOnOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301161515045_Config.resx">
-      <DependentUpon>201301161515045_Config.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302111332390_AddLocationToMake.resx">
-      <DependentUpon>201302111332390_AddLocationToMake.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302202145181_ReelInScope.resx">
-      <DependentUpon>201302202145181_ReelInScope.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302231804235_UpdateModelValidation.resx">
-      <DependentUpon>201302231804235_UpdateModelValidation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302231915362_UpdateMakeValidation.resx">
-      <DependentUpon>201302231915362_UpdateMakeValidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

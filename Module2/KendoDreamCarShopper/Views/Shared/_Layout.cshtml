@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,15 +22,19 @@
                         @Html.Partial("_LoginPartial")
                     </section>
                     <ul id="menu">
-                        <li>Makes</li>
+                        <li>Makes
+                            <ul id="makesMenu">
+
+                            </ul>
+                        </li>
                         <li>Maintenance
                             <ul>
                                 <li><a href="/Maintenance/Makes">Makes</a></li>
                                 <li><a href="/Maintenance/Models">Models</a></li>
                             </ul>
                         </li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li><a href="Home/About">About</a></li>
+                        <li><a href="/Home/Contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
