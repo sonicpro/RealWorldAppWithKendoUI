@@ -2,6 +2,7 @@
 
 namespace KendoDreamCarShopper.ViewModels.Maintenance {
 
+    // Identical to Make model class except "Models" navigation property.
     public class MakeViewModel {
 
         public long Id { get; set; }
