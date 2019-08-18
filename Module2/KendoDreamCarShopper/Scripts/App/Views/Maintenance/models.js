@@ -27,23 +27,54 @@
                 }
             },
             sort: [{ field: "MakeName", dir: "asc" }, { field: "Name", dir: "asc" }],
-            pageSize: 5
+            pageSize: 5,
+            group: { field: "MakeName" }
         },
         columns: [
-            { field: "MakeName", title: "Make", groupHeaderTemplate: '#= value #' },
-            { field: "Name", title: "Model" },
-            { field: "Year", title: "Year", width: "85px", attributes: { style: "text-align:right;" } },
-            { field: "BasePrice", title: "MSRP", format: "{0:c0}", width: "100px", attributes: { style: "text-align:right;" } },
-            { command: [{ text: "Detail", click: details }, { text: "Delete", click: deleteModel }], title: "&nbsp;", width: "170px" }],
+            {
+                field: "MakeName",
+                title: "Make",
+                groupHeaderTemplate: '#= value #'
+            },
+            {
+                field: "Name",
+                title: "Model"
+            },
+            {
+                field: "Year",
+                title: "Year",
+                width: "85px",
+                attributes: { style: "text-align:right;" }
+            },
+            {
+                field: "BasePrice",
+                title: "MSRP",
+                format: "{0:c0}",
+                width: "100px",
+                attributes: { style: "text-align:right;" }
+            },
+            {
+                command: [
+                    { text: "Detail", click: details },
+                    { text: "Delete", click: deleteModel }
+                ],
+                title: "&nbsp;",
+                width: "170px"
+            }
+        ],
         pageable: true,
-        sortable: true
+        sortable: true,
+        toolbar: kendo.template($("#toolbarTemplate").html())
     });
+
+    // Hack: hide a column which value is also shown in the group header.
+    $("#models").data("kendoGrid").hideColumn("MakeName");
 });
 
 function details(e) {
     e.preventDefault();
-    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = "/Maintenance/ModelDetails/" + dataItem.Id + "?makeId=" + dataItem.MakeId;
+    var model = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = "/Maintenance/ModelDetails/" + model.Id + "?makeId=" + model.MakeId;
 }
 
 function deleteModel(e) {
@@ -61,4 +92,15 @@ function deleteModel(e) {
             });
         }
     }
+}
+
+function addNewModel() {
+    // The current page url is like /Maintenance/Models/{id}, where id - Make.Id.
+    // Take it and redirect to model details page using the url like /Mainenance/ModelDetails/0?makeId={id}.
+    var makeId = $.url().segment(-1);
+    var addNewModelUrl = "/Maintenance/ModelDetails/0";
+    if (!isNaN(makeId)) {
+        addNewModelUrl = addNewModelUrl + "?makeId=" + makeId;
+    }
+    window.location.href = addNewModelUrl;
 }
