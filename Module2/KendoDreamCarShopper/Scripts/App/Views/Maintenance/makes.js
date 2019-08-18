@@ -83,7 +83,7 @@
         // this. - is a kendoGrid
         // dataItem() method takes jQuery object that represent a table row and returns a kendo.data.Model instance to which the table row is bound.
         // BTW dataSource contains instances of kendo.data.Model when the schema.model setting is specified.
-        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-        window.location.href = "/Maintenance/Models/" + dataItem.Id;
+        var model = this.dataItem($(e.currentTarget).closest("tr"));
+        window.location.href = "/Maintenance/Models/" + model.Id;
     }
 });
