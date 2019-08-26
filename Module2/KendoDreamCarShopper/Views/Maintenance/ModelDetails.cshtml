@@ -1,6 +1,74 @@
 ﻿
 <h2>Maintenance - Model Details</h2><br/>
+<div id="modelDetails" class="inputcontainer">
+    <label for="make">Make</label>
+    <select id="make" name="make" placeholder="Select Make"></select><br />
 
+    <label for="year">Year</label>
+    <input type="number"
+           id="year"
+           name="year"
+           placeholder="Year"
+           data-bind="value: year"
+           class="k-textbox" /><br />
+
+    <label for="model">Model</label>
+    <input type="text"
+           id="model"
+           name="model"
+           placeholder="Model Name"
+           data-bind="value: model"
+           class="k-textbox" /><br />
+
+    <label for="engineType">Engine</label>
+    <input type="text" id="engineType" name="engineType" placeholder="Engine Type" /><br />
+
+    <label for="breakHorsepower">Break Horsepower</label>
+    <input type="number"
+           id="breakHorsepower"
+           name="breakHorsepower"
+           placeholder="Break Horsepower"
+           data-bind="value: breakHorsepower"
+           class="k-textbox" /><br />
+
+    <label for="zeroToSixty">0 - 60 Time (secs)</label>
+    <input type="number"
+           id="zeroToSixty"
+           name="zeroToSixty"
+           placeholder="0 - 60 Time (secs)"
+           data-bind="value: zeroToSixty"
+           class="k-textbox" /><br />
+
+    <label for="topSpeed">Top Speed (mph)</label>
+    <input type="number"
+           id="topSpeed"
+           name="topSpeed"
+           placeholder="Top Speed (mph)"
+           data-bind="value: topSpeed"
+           class="k-textbox" /><br />
+
+    <label for="basePrice">Base Price</label>
+    <input type="number"
+           id="basePrice"
+           name="basePrice"
+           placeholder="Base Price (US $)"
+           data-bind="value: basePrice"
+           class="k-textbox" /><br />
+
+    <label for="description" class="textareaLabel">Description</label>
+    <textarea id="description"
+          name="description"
+          placeholder="Description"
+          data-bind="value: description"
+          class="k-textbox" >
+    </textarea><br />
+
+    <div id="images"></div>
+    <br />
+
+    <input id="save" type="button" class="k-button" value="Save" /><br />
+    <span id="status"></span>
+</div>
 
 @section scripts
 {
