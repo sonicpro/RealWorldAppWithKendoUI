@@ -9,7 +9,6 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
 
         public int Id { get; set; }
         public int? MakeId { get; set; }
-        public string MakeName { get; set; }
         public string Name { get; set; }
         public int Year { get; set; }
         public decimal BasePrice { get; set; }
@@ -19,7 +18,7 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
         public int TopSpeed { get; set; }
         public string Description { get; set; }
         public IList<ModelImageViewModel> Images { get; set; } 
-        public string DisplayName { get { return string.Format("{0}: {1} {2}", MakeName, Year, Name); } }
+        //public string DisplayName { get { return string.Format("{0}: {1} {2}", MakeName, Year, Name); } }
         public IList<LookupItemViewModel> Makes { get; set; }
 
         public static ModelDetailsViewModel FromModel(Model model) {
@@ -27,7 +26,6 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
             return new ModelDetailsViewModel {
                 Id = model.Id,
                 MakeId = model.MakeId,
-                MakeName = model.Make.Name,
                 Name = model.Name,
                 Year = model.Year,
                 BasePrice = model.BasePrice,

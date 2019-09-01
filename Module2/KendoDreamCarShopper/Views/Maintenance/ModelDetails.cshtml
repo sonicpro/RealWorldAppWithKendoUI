@@ -2,68 +2,70 @@
 <h2>Maintenance - Model Details</h2><br/>
 <div id="modelDetails" class="inputcontainer">
     <label for="make">Make</label>
-    <select id="make" name="make" placeholder="Select Make"></select><br />
+    <select id="make"
+            placeholder="Select Make"
+            data-text-field="Text"
+            data-value-field="Id"
+            data-bind="source: model.Makes, value: model.MakeId">
+    </select><br />
 
     <label for="year">Year</label>
     <input type="number"
            id="year"
-           name="year"
            placeholder="Year"
-           data-bind="value: year"
+           data-bind="value: model.Year"
            class="k-textbox" /><br />
 
     <label for="model">Model</label>
     <input type="text"
            id="model"
-           name="model"
            placeholder="Model Name"
-           data-bind="value: model"
+           data-bind="value: model.Name"
            class="k-textbox" /><br />
 
     <label for="engineType">Engine</label>
-    <input type="text" id="engineType" name="engineType" placeholder="Engine Type" /><br />
+    <input type="text"
+           id="engineType"
+           placeholder="Engine Type"
+           data-bind="value: model.EngineType"
+           class="k-textbox" /><br />
 
     <label for="breakHorsepower">Break Horsepower</label>
     <input type="number"
            id="breakHorsepower"
-           name="breakHorsepower"
            placeholder="Break Horsepower"
-           data-bind="value: breakHorsepower"
+           data-bind="value: model.BreakHorsepower"
            class="k-textbox" /><br />
 
     <label for="zeroToSixty">0 - 60 Time (secs)</label>
     <input type="number"
            id="zeroToSixty"
-           name="zeroToSixty"
            placeholder="0 - 60 Time (secs)"
-           data-bind="value: zeroToSixty"
+           data-bind="value: model.ZeroToSixty"
            class="k-textbox" /><br />
 
     <label for="topSpeed">Top Speed (mph)</label>
     <input type="number"
            id="topSpeed"
-           name="topSpeed"
            placeholder="Top Speed (mph)"
-           data-bind="value: topSpeed"
+           data-bind="value: model.TopSpeed"
            class="k-textbox" /><br />
 
     <label for="basePrice">Base Price</label>
     <input type="number"
            id="basePrice"
-           name="basePrice"
            placeholder="Base Price (US $)"
-           data-bind="value: basePrice"
+           data-bind="value: model.BasePrice"
            class="k-textbox" /><br />
 
     <label for="description" class="textareaLabel">Description</label>
     <textarea id="description"
-          name="description"
           placeholder="Description"
-          data-bind="value: description"
+          data-bind="value: model.Description"
           class="k-textbox" >
     </textarea><br />
 
-    <div id="images"></div>
+    <div id="images" data-bind="source: model.Images"></div>
     <br />
 
     <input id="save" type="button" class="k-button" value="Save" /><br />
