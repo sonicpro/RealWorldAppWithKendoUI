@@ -68,7 +68,8 @@
         dataType: "json"
     }).done(function (model) {
         vm.set("model", model);
+        kendo.bind($("#modelDetails"), vm);
     });
 
-    kendo.bind($("#modelDetails"), vm);
+    $("body").kendoValidator();
 });
