@@ -28,10 +28,28 @@
 
     $("#images").kendoGrid({
         columns: [
-            { field: "Order", title: "Order", width: "60px" },
-            { field: "ShortDescription", title: "Description", width: "100px" },
-            { field: "LowResolutionUrl", title: "Low Resolution Url" },
-            { field: "HighResolutionUrl", title: "High Resolution Url" },
+            {
+                field: "Order",
+                title: "Order",
+                width: "60px",
+                editor: imageOrderEditor
+            },
+            {
+                field: "ShortDescription",
+                title: "Description",
+                width: "100px",
+                editor: imageDescriptionEditor
+            },
+            {
+                field: "LowResolutionUrl",
+                title: "Low Resolution Url",
+                editor: imageUrlEditor
+            },
+            {
+                field: "HighResolutionUrl",
+                title: "High Resolution Url",
+                editor: imageUrlEditor
+            },
             {
                 command: ["destroy"],
                 title: "&nbsp;",
@@ -72,4 +90,33 @@
     });
 
     $("body").kendoValidator();
+
+    // kendoGrid.columns "editor" property values:
+    function imageOrderEditor(container) {
+        $('<input class="imageOrder" name="Order" required validationMessage="Please enter Order #" ' +
+            'data-role="numerictextbox" min="1" />')
+            .appendTo(container);
+
+        // Create kendoTooltip explicitly, othervise placing is not good for kendoNumericTextBox validation.
+        //create tooltipElement element, NOTE: data-for attribute should match editor's name attribute
+        var tooltipElement = $('<span class="k-invalid-msg" data-for="Order"></span>');
+        //append the tooltip element
+        tooltipElement.appendTo(container);
+    }
+
+    function imageDescriptionEditor(container) {
+        $('<input class="imageDescription" name="ShortDescription" type="text" ' +
+            'required validationMessage="Please enter Description" maxlength="25" />')
+            .appendTo(container);
+    }
+
+    // Passing the fild name through options. Do not forget to double backspaces in regex.
+    function imageUrlEditor(container, options) {
+        $('<input type="text" name="' + options.field + '" ' +
+            'pattern="(?:[\\-\\w/]*/)?(?:[\\-\\w]+).(?:jpg|jpeg|png|gif)(?!(?:\\w|\\W))" ' +
+            'required validationMessage="Url is required and must be a valid path" ' +
+            'maxlength="1024" />')
+            .appendTo(container);
+    }
 });
+
