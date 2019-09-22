@@ -51,7 +51,12 @@
                 editor: imageUrlEditor
             },
             {
-                command: ["destroy"],
+                command: [
+                    {
+                        name: "delete",
+                        template: $("#commandTemplate").html()
+                    }
+                ],
                 title: "&nbsp;",
                 width: "88px"
             }
@@ -76,7 +81,13 @@
     }
 
     var vm = kendo.observable({
-        model: {}
+        model: {},
+        deleteImage: function (e) {
+            var images = this.get("images");
+            var index = images.indexOf(e.data);
+            images.splice(index, 1);
+        },
+        save: save
     });
 
     $.ajax({
@@ -117,6 +128,28 @@
             'required validationMessage="Url is required and must be a valid path" ' +
             'maxlength="1024" />')
             .appendTo(container);
+    }
+
+    function save() {
+        var validator = $("#modelDetails").kendoValidator()
+            .data("kendoValidator");
+
+        if (validator.validate()) {
+            $.ajax({
+                url: "/Api/Models",
+                type: "POST",
+                data: JSON.stringify(vm.model),
+                contentType: "application/json; charset=UTF-8"
+            }).done(function () {
+                $("#status").text("Saved Successfully!")
+                    .removeClass("error")
+                    .addClass("success");
+            });
+        } else {
+            $("status").text("Validation Errors!")
+                .removeClass("success")
+                .addClass("error");
+        }
     }
 });
 

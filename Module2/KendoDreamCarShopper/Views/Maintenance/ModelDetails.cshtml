@@ -126,7 +126,7 @@
     <div id="images" data-bind="source: model.Images"></div>
     <br />
 
-    <input id="save" type="button" class="k-button" value="Save" /><br />
+    <input type="button" class="k-button" data-bind="click: save" value="Save" /><br />
     <span id="status"></span>
 </div>
 
@@ -134,3 +134,6 @@
 {
     <script src="~/Scripts/App/Views/Maintenance/modelDetails.js"></script>
 }
+<script type="text/x-kendo-template" id="commandTemplate">
+    <input type="button" class="k-button" data-bind="click: deleteImage" value="Delete" />
+</script>
