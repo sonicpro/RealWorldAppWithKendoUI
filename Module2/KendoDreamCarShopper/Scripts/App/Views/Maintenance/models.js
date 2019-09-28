@@ -15,39 +15,39 @@
             },
             schema: {
                 model: {
-                    id: "Id",
+                    id: "id",
                     fields: {
-                        Id: { editable: false },
-                        Name: { editable: false },
-                        Year: { editable: false },
-                        BasePrice: { editable: false },
-                        MakeId: { editable: false },
-                        MakeName: { editable: false }
+                        id: { editable: false },
+                        name: { editable: false },
+                        year: { editable: false },
+                        basePrice: { editable: false },
+                        makeId: { editable: false },
+                        makeName: { editable: false }
                     }
                 }
             },
-            sort: [{ field: "MakeName", dir: "asc" }, { field: "Name", dir: "asc" }],
+            sort: [{ field: "makeName", dir: "asc" }, { field: "name", dir: "asc" }],
             pageSize: 5,
-            group: { field: "MakeName" }
+            group: { field: "makeName" }
         },
         columns: [
             {
-                field: "MakeName",
+                field: "makeName",
                 title: "Make",
                 groupHeaderTemplate: '#= value #'
             },
             {
-                field: "Name",
+                field: "name",
                 title: "Model"
             },
             {
-                field: "Year",
+                field: "year",
                 title: "Year",
                 width: "85px",
                 attributes: { style: "text-align:right;" }
             },
             {
-                field: "BasePrice",
+                field: "basePrice",
                 title: "MSRP",
                 format: "{0:c0}",
                 width: "100px",
@@ -74,7 +74,7 @@
 function details(e) {
     e.preventDefault();
     var model = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = "/Maintenance/ModelDetails/" + model.Id + "?makeId=" + model.MakeId;
+    window.location.href = "/Maintenance/ModelDetails/" + model.id + "?makeId=" + model.makeId;
 }
 
 function deleteModel(e) {
@@ -82,7 +82,7 @@ function deleteModel(e) {
         var model = this.dataItem($(e.currentTarget).closest("tr"));
         var models = $(e.target).closest(".k-grid").data("kendoGrid").dataSource;
         models.remove(model);
-        if (model.Id != 0) {
+        if (model.id != 0) {
             $.ajax({
                 url: "/Api/Models/",
                 dataType: "json",

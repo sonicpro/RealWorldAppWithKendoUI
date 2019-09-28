@@ -9,7 +9,7 @@
             placeholder="Select Make"
             data-text-field="Text"
             data-value-field="Id"
-            data-bind="source: model.Makes, value: model.MakeId"
+            data-bind="source: model.makes, value: model.makeId"
             required
             data-required-msg="Must select a Make"
     />
@@ -21,7 +21,7 @@
            id="year"
            name="year"
            placeholder="Year"
-           data-bind="value: model.Year"
+           data-bind="value: model.year"
            class="k-textbox"
            required
            validationMessage="Please enter Year"
@@ -35,7 +35,7 @@
            id="model"
            name="model"
            placeholder="Model Name"
-           data-bind="value: model.Name"
+           data-bind="value: model.name"
            class="k-textbox"
            required
            validationMessage="Please enter Model Name"
@@ -48,7 +48,7 @@
            id="engineType"
            name="engineType"
            placeholder="Engine Type"
-           data-bind="value: model.EngineType"
+           data-bind="value: model.engineType"
            class="k-textbox"
            required
            validationMessage="Please enter Engine Type"
@@ -61,7 +61,7 @@
            id="breakHorsepower"
            name="breakHorsepower"
            placeholder="Break Horsepower"
-           data-bind="value: model.BreakHorsepower"
+           data-bind="value: model.breakHorsepower"
            class="k-textbox"
            required
            validationMessage="Please enter Break Horsepower"
@@ -75,7 +75,7 @@
            id="zeroToSixty"
            name="zeroToSixty"
            placeholder="0 - 60 Time (secs)"
-           data-bind="value: model.ZeroToSixty"
+           data-bind="value: model.zeroToSixty"
            class="k-textbox"
            required
            validationMessage="Please enter the time required for acceleration from 0 to 60 mph"
@@ -89,7 +89,7 @@
            id="topSpeed"
            name="topSpeed"
            placeholder="Top Speed (mph)"
-           data-bind="value: model.TopSpeed"
+           data-bind="value: model.topSpeed"
            class="k-textbox"
            required
            validationMessage="Please enter Top speed"
@@ -103,7 +103,7 @@
            id="basePrice"
            name="basePrice"
            placeholder="Base Price (US $)"
-           data-bind="value: model.BasePrice"
+           data-bind="value: model.basePrice"
            class="k-textbox"
            required
            validationMessage="Please enter Base Price" />
@@ -114,7 +114,7 @@
     <textarea id="description"
         name="description"
         placeholder="Description"
-        data-bind="value: model.Description"
+        data-bind="value: model.description"
         class="k-textbox"
         required
         validationMessage="Please enter Description"
@@ -123,7 +123,7 @@
     <span class="k-invalid-msg" data-for="description"></span>
     <br />
 
-    <div id="images" data-bind="source: model.Images"></div>
+    <div id="images" data-bind="source: model.images"></div>
     <br />
 
     <input type="button" class="k-button" data-bind="click: save" value="Save" /><br />

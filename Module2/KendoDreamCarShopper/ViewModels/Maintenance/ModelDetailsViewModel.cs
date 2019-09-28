@@ -2,23 +2,45 @@
 using System.Linq;
 using KendoDreamCarShopper.Models;
 using KendoDreamCarShopper.ViewModels.Common;
+using Newtonsoft.Json;
 
 namespace KendoDreamCarShopper.ViewModels.Maintenance {
 
     public class ModelDetailsViewModel {
-
+        [JsonProperty("id")]
         public int Id { get; set; }
+
+        [JsonProperty("makeId")]
         public int? MakeId { get; set; }
+
+        [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("year")]
         public int Year { get; set; }
+
+        [JsonProperty("basePrice")]
         public decimal BasePrice { get; set; }
+
+        [JsonProperty("engineType")]
         public string EngineType { get; set; }
+
+        [JsonProperty("breakHorsepower")]
         public int BreakHorsepower { get; set; }
+
+        [JsonProperty("zeroToSixty")]
         public decimal ZeroToSixty { get; set; }
+
+        [JsonProperty("topSpeed")]
         public int TopSpeed { get; set; }
+
+        [JsonProperty("description")]
         public string Description { get; set; }
-        public IList<ModelImageViewModel> Images { get; set; } 
-        //public string DisplayName { get { return string.Format("{0}: {1} {2}", MakeName, Year, Name); } }
+
+        [JsonProperty("images")]
+        public IList<ModelImageViewModel> Images { get; set; }
+
+        [JsonProperty("makes")]
         public IList<LookupItemViewModel> Makes { get; set; }
 
         public static ModelDetailsViewModel FromModel(Model model) {

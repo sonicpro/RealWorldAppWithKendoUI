@@ -29,24 +29,24 @@
     $("#images").kendoGrid({
         columns: [
             {
-                field: "Order",
+                field: "order",
                 title: "Order",
                 width: "60px",
                 editor: imageOrderEditor
             },
             {
-                field: "ShortDescription",
+                field: "shortDescription",
                 title: "Description",
                 width: "100px",
                 editor: imageDescriptionEditor
             },
             {
-                field: "LowResolutionUrl",
+                field: "lowResolutionUrl",
                 title: "Low Resolution Url",
                 editor: imageUrlEditor
             },
             {
-                field: "HighResolutionUrl",
+                field: "highResolutionUrl",
                 title: "High Resolution Url",
                 editor: imageUrlEditor
             },
@@ -83,7 +83,7 @@
     var vm = kendo.observable({
         model: {},
         deleteImage: function (e) {
-            var images = this.get("images");
+            var images = this.model.get("model.images");
             var index = images.indexOf(e.data);
             images.splice(index, 1);
         },

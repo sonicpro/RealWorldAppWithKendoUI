@@ -1,14 +1,27 @@
 ﻿using KendoDreamCarShopper.Models;
+using Newtonsoft.Json;
 
 namespace KendoDreamCarShopper.ViewModels.Maintenance {
 
     public class ModelImageViewModel {
-
+        [JsonProperty("id")]
         public int Id { get; set; }
+
+        [JsonProperty("highResolutionUrl")]
         public string HighResolutionUrl { get; set; }
+
+        [JsonProperty("lowResolutionUrl")]
         public string LowResolutionUrl { get; set; }
+
+        [JsonProperty("order")]
         public int Order { get; set; }
+
+        [JsonProperty("sortDescription")]
         public string ShortDescription { get; set; }
+
+        // This property is set directly in ModelsController.HandleImages().
+        // No need to pass it to the client.
+        [JsonIgnore]
         public int ModelId { get; set; }
 
         public static ModelImageViewModel FromModel(ModelImage model) {
@@ -17,8 +30,7 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
                 HighResolutionUrl = model.HighResolutionUrl,
                 LowResolutionUrl = model.LowResolutionUrl,
                 Order = model.Order,
-                ShortDescription = model.ShortDescription,
-                ModelId = model.ModelId
+                ShortDescription = model.ShortDescription
             };
         }
 

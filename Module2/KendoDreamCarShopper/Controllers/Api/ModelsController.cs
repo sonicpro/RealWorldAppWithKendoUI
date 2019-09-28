@@ -89,7 +89,6 @@ namespace KendoDreamCarShopper.Controllers.Api {
                     o.LowResolutionUrl = image.LowResolutionUrl;
                     o.ShortDescription = image.ShortDescription;
                     o.LongDescription = image.ShortDescription;
-                    o.ModelId = image.ModelId;
                 }
                 else {
                     image.ModelId = model.Id;
