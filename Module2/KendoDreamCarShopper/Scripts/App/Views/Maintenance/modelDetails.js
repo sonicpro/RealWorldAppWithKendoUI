@@ -64,7 +64,7 @@
         editable: true,
         sortable: true,
         toolbar: ["create"]
-    })
+    });
 
     var url = "/Api/Models"
     var id = parseInt($.url().segment(-1));
@@ -83,7 +83,7 @@
     var vm = kendo.observable({
         model: {},
         deleteImage: function (e) {
-            var images = this.model.get("model.images");
+            var images = this.model.get("images");
             var index = images.indexOf(e.data);
             images.splice(index, 1);
         },

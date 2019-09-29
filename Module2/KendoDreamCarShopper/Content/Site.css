@@ -758,3 +758,21 @@ tr.pager td {
 {
     padding: 10px;
 }
+
+div#images > .k-grid-content > table
+{
+    height: 75px;
+}
+
+div#images > .k-grid-content td
+{
+    vertical-align: top;
+}
+
+div#images > .k-grid-content .k-edit-cell {
+    padding-top: 0.4em;
+}
+
+div#images > .k-grid-content .k-edit-cell > input {
+    margin-top: 0;
+}

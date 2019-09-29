@@ -76,6 +76,7 @@ namespace KendoDreamCarShopper.Controllers.Api {
             m.Description = model.Description;
             m.EngineType = model.EngineType;
             m.Description = model.Description;
+            m.MakeId = model.MakeId.GetValueOrDefault();
             HandleImages(model, m);
         }
 
