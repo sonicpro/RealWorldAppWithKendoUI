@@ -16,7 +16,7 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
         [JsonProperty("order")]
         public int Order { get; set; }
 
-        [JsonProperty("sortDescription")]
+        [JsonProperty("shortDescription")]
         public string ShortDescription { get; set; }
 
         // This property is set directly in ModelsController.HandleImages().

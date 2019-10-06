@@ -104,19 +104,19 @@
 
     // kendoGrid.columns "editor" property values:
     function imageOrderEditor(container) {
-        $('<input class="imageOrder" name="Order" required validationMessage="Please enter Order #" ' +
+        $('<input class="imageOrder" name="order" required validationMessage="Please enter Order #" ' +
             'data-role="numerictextbox" min="1" />')
             .appendTo(container);
 
         // Create kendoTooltip explicitly, othervise placing is not good for kendoNumericTextBox validation.
         //create tooltipElement element, NOTE: data-for attribute should match editor's name attribute
-        var tooltipElement = $('<span class="k-invalid-msg" data-for="Order"></span>');
+        var tooltipElement = $('<span class="k-invalid-msg" data-for="order"></span>');
         //append the tooltip element
         tooltipElement.appendTo(container);
     }
 
     function imageDescriptionEditor(container) {
-        $('<input class="imageDescription" name="ShortDescription" type="text" ' +
+        $('<input class="imageDescription" name="shortDescription" type="text" ' +
             'required validationMessage="Please enter Description" maxlength="25" />')
             .appendTo(container);
     }
