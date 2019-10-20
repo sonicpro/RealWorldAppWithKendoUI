@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using KendoDreamCarShopper.Extensions;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -61,7 +63,7 @@
         </footer>
         <script src="~/Scripts/utils.min.js"></script>
         <script src="~/Scripts/kendo.web.min.js"></script>
-        <script src="~/Scripts/App/Views/Shared/layout.js"></script>
+        <script src=@Url.ContentVersioned("~/Scripts/App/Views/Shared/layout.js")></script>
         @RenderSection("scripts", required: false)
     </body>
 </html>

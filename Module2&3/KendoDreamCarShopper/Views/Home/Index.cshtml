@@ -1,12 +1,27 @@
 ﻿@using KendoDreamCarShopper.Models
+@using KendoDreamCarShopper.Extensions;
+
 @model IEnumerable<Make>
 @{
     ViewBag.Title = "Dream car Shopper";
 }
 
-<div id="homeMainContainer" class="row-fluid"></div>
+<div id="homeMainContainer" class="row-fluid">
+    <div id="makeImages" class="span3"></div>
+    <div id="imagesCarousel" class="span9">
+        <img data-bind="imageSlider: modelImages" data-slide-delay="5000" />
+    </div>
+</div>
+
+<script id="makesTemplate" type="text/x-kendo-template">
+    <a href="/home/Make/#= id #">
+        <img src="#= imageUrl #" alt="#= name #" title="#= name #"/>
+    </a>
+    <br/>
+</script>
 
 @section scripts
 {
-    <script src="~/Scripts/App/Views/Home/index.js"></script>
+    <script src=@Url.ContentVersioned("~/Scripts/App/customBindings.js")></script>
+    <script src=@Url.ContentVersioned("~/Scripts/App/Views/Home/index.js")></script>
 }

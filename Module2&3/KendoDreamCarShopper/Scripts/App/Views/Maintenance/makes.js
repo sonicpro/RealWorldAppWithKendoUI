@@ -26,13 +26,13 @@
                     fields: {
                         name: {
                             validation: {
-                                pattern: "[\\w\\d]{2,}",
+                                pattern: "[\\w\\d ]{2,}",
                                 validationMessage: "Please enter the car maker name (at least two characters)."
                             }
                         },
                         location: {
                             validation: {
-                                pattern: "[\\w\\d]{2,}",
+                                pattern: "[\\w\\d, ]{2,}",
                                 validationMessage: "Please enter Headquarters (at least two characters)."
                             }
                         },
