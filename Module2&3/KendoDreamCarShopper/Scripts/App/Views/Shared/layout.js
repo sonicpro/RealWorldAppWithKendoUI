@@ -6,7 +6,7 @@
         type: "GET"
     }).done(function (data) {
         data.forEach(function (make) {
-            var markup = "<li><a href='/Makes/Index/" + make.Id + "'>" + make.Name + "</a></li>";
+            var markup = "<li><a href='/Makes/Index/" + make.id + "'>" + make.name + "</a></li>";
             $("#makesMenu").append(markup);
             $("#menu").kendoMenu();
         });
