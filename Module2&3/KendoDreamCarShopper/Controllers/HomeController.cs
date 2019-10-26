@@ -7,5 +7,13 @@ namespace KendoDreamCarShopper.Controllers {
         public ActionResult Index() {
             return View();
         }
+
+        public ActionResult Make(int id) {
+            return View();
+        }
+
+        public ActionResult Model(int id) {
+            return View();
+        }
     }
 }

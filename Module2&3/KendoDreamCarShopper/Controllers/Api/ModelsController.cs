@@ -13,17 +13,20 @@ namespace KendoDreamCarShopper.Controllers.Api {
     public class ModelsController : ApiControllerBase {
 
         [HttpGet]
-        public IEnumerable<ModelViewModel> Get() {
+        public IEnumerable<ModelViewModel> Get()
+        {
             return EntityStore.Models.Include("Make").AsEnumerable().Select(x => ModelViewModel.FromModel(x));
         }
 
         [HttpGet]
-        public IEnumerable<ModelViewModel> Get(int id) {
+        public IEnumerable<ModelViewModel> Get(int id)
+        {
             return EntityStore.Models.Include("Make").Where(x => x.MakeId == id).AsEnumerable().Select(x => ModelViewModel.FromModel(x));
         }
 
         [HttpGet]
-        public ModelDetailsViewModel Get(int id, int? makeId) {
+        public ModelDetailsViewModel Get(int id, int? makeId)
+        {
             ModelDetailsViewModel viewModel = ModelDetailsViewModel.FromModel(EntityStore.Models.Include("Images").FirstOrDefault(x => x.Id == id));
             viewModel.Makes = EntityStore.Makes.Select(x => new LookupItemViewModel{Id = x.Id, Text = x.Name}).OrderBy(x=>x.Text).ToList();
             if (id == 0)
@@ -32,7 +35,8 @@ namespace KendoDreamCarShopper.Controllers.Api {
         }
 
         [HttpPost]
-        public void Post(ModelDetailsViewModel model) {
+        public void Post(ModelDetailsViewModel model)
+        {
             if (model.Id == 0) {
                 AddNewModel(model);
             }
@@ -55,7 +59,8 @@ namespace KendoDreamCarShopper.Controllers.Api {
         }
 
         [HttpDelete]
-        public void Delete(ModelViewModel viewModel) {
+        public void Delete(ModelViewModel viewModel)
+        {
             Model toRemove = EntityStore.Models.Find(viewModel.Id);
             EntityStore.Models.Remove(toRemove);
             EntityStore.SaveChanges();
@@ -66,7 +71,8 @@ namespace KendoDreamCarShopper.Controllers.Api {
             EntityStore.Models.Add(m);
         }
 
-        private void UpdateExistingModel(ModelDetailsViewModel model) {
+        private void UpdateExistingModel(ModelDetailsViewModel model)
+        {
             Model m = EntityStore.Models.Include("Images").First(x => x.Id == model.Id);
             m.Name = model.Name;
             m.TopSpeed = model.TopSpeed;
@@ -80,7 +86,8 @@ namespace KendoDreamCarShopper.Controllers.Api {
             HandleImages(model, m);
         }
 
-        private void HandleImages(ModelDetailsViewModel model, Model m) {
+        private void HandleImages(ModelDetailsViewModel model, Model m)
+        {
             IList<ModelImage> toAdd = new List<ModelImage>();
             foreach (ModelImageViewModel image in model.Images) {
                 if (image.Id != 0) {

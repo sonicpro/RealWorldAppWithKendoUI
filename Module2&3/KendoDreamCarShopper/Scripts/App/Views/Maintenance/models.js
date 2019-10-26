@@ -5,7 +5,7 @@
                 read: {
                     url: function () {
                         var url = "/Api/Models";
-                        var id = $.url().segment(-1);
+                        var id = parseInt($.url().segment(-1));
                         if (!isNaN(id))
                             url = url + "/" + id;
                         return url;
@@ -97,7 +97,7 @@ function deleteModel(e) {
 function addNewModel() {
     // The current page url is like /Maintenance/Models/{id}, where id - Make.Id.
     // Take it and redirect to model details page using the url like /Mainenance/ModelDetails/0?makeId={id}.
-    var makeId = $.url().segment(-1);
+    var makeId = parseInt($.url().segment(-1));
     var addNewModelUrl = "/Maintenance/ModelDetails/0";
     if (!isNaN(makeId)) {
         addNewModelUrl = addNewModelUrl + "?makeId=" + makeId;
