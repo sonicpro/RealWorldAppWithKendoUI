@@ -1,4 +1,5 @@
-﻿using KendoDreamCarShopper.Models;
+using System.Linq;
+using KendoDreamCarShopper.Models;
 using Newtonsoft.Json;
 
 namespace KendoDreamCarShopper.ViewModels.Maintenance {
@@ -16,11 +17,17 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
         [JsonProperty("basePrice")]
         public decimal BasePrice { get; set; }
 
+        [JsonProperty("engineType")]
+        public string EngineType { get; set; }
+
         [JsonProperty("makeId")]
         public long MakeId { get; set; }
 
         [JsonProperty("makeName")]
         public string MakeName { get; set; }
+
+        [JsonProperty("thumbnailPath")]
+        public string ThumbnailPath { get; set; }
 
         public static ModelViewModel FromModel(Model model) {
             return new ModelViewModel {
@@ -28,9 +35,24 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
                 Name = model.Name,
                 Year = model.Year,
                 BasePrice = model.BasePrice,
+                EngineType = model.EngineType,
                 MakeId = model.MakeId,
-                MakeName = model.Make.Name
+                MakeName = model.Make.Name,
+                ThumbnailPath = GetThumbnailPath(model)
             };
         }
+
+        #region Helper methods
+
+        private static string GetThumbnailPath(Model model)
+        {
+            if (model.Images == null)
+            {
+                return null;
+            }
+            return model.Images.First().LowResolutionUrl;
+        }
+
+        #endregion
     }
 }

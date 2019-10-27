@@ -8,9 +8,27 @@
         <span id="makeLocation"></span>
     </div>
     <div class="span3"></div>
+
+    <div id="makeModels" class="span7 modelDetails"></div>
 </div>
 
 @section scripts
 {
     <script src="~/Scripts/App/Views/Home/make.js"></script>
 }
+
+<script id="makeModelsTemplate" type="text/x-kendo-template">
+    <div class="row modelImageRow">
+        <div class="span6 modelImageContainer">
+            <a class="modelImage" href="/Home/Model/#= id #">
+                <img class="modelImage" src="#= thumbnailPath #" title="#= name #" alt="#= name #" />
+            </a>
+        </div>
+        <div>
+            <span id="name">#= year # #: name #</span>
+            <span>#: engineType #</span>
+            <span>#= kendo.toString(basePrice, "c") #</span>
+            <a href="/Home/Model/#= id #">More Details</a>
+        </div>
+    </div>
+</script>

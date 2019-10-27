@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+using System.Web.Mvc;
 using KendoDreamCarShopper.Models;
 
 namespace KendoDreamCarShopper.Controllers {

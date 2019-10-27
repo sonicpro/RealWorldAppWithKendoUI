@@ -8,11 +8,11 @@ namespace KendoDreamCarShopper.Controllers {
             return View();
         }
 
-        public ActionResult Make(int id) {
+        public ActionResult Make() {
             return View();
         }
 
-        public ActionResult Model(int id) {
+        public ActionResult Model() {
             return View();
         }
     }

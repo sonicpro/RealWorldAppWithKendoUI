@@ -1,21 +1,23 @@
-﻿using System.Web.Mvc;
+using System.Web.Mvc;
 
 namespace KendoDreamCarShopper.Controllers {
 
     [Authorize(Roles = "Admin")]
     public class MaintenanceController : ControllerBase {
 
-        public ActionResult Makes() {
+        public ActionResult Makes()
+        {
             return View();
         }
 
-        public ActionResult Models(int? id) {
+        public ActionResult Models()
+        {
             return View();
         }
 
-        public ActionResult ModelDetails(int id) {
+        public ActionResult ModelDetails()
+        {
             return View();
         }
-
     }
 }

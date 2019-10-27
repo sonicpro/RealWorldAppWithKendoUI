@@ -7,5 +7,20 @@
             $("#makeImage").attr("title", makeModel.name);
             $("#makeLocation").text(makeModel.location);
         }, "json")
+
+        var makeModelDataSource = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: "/Api/Models/" + id,
+                    dataType: "json"
+                }
+            },
+            autoBind: true
+        });
+
+        $("#makeModels").kendoListView({
+            dataSource: makeModelDataSource,
+            template: kendo.template($("#makeModelsTemplate").html())
+        });
     }
 });
