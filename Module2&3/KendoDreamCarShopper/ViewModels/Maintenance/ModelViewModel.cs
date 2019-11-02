@@ -50,7 +50,7 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
             {
                 return null;
             }
-            return model.Images.First().LowResolutionUrl;
+            return model.Images.FirstOrDefault()?.LowResolutionUrl;
         }
 
         #endregion

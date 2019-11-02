@@ -11,7 +11,10 @@
                         return url;
                     }, type: "GET"
                 },
-                destroy: { url: "/Api/Models", type: "DELETE" }
+                destroy: {
+                    url: "/Api/Models",
+                    type: "DELETE"
+                }
             },
             schema: {
                 model: {
@@ -64,7 +67,8 @@
         ],
         pageable: true,
         sortable: true,
-        toolbar: kendo.template($("#toolbarTemplate").html())
+        toolbar: kendo.template($("#toolbarTemplate").html()),
+        editable: true
     });
 
     // Hack: hide a column which value is also shown in the group header.
@@ -79,18 +83,10 @@ function details(e) {
 
 function deleteModel(e) {
     if (confirm("Are you sure you want to delete this record?")) {
-        var model = this.dataItem($(e.currentTarget).closest("tr"));
-        var models = $(e.target).closest(".k-grid").data("kendoGrid").dataSource;
-        models.remove(model);
-        if (model.id != 0) {
-            $.ajax({
-                url: "/Api/Models/",
-                dataType: "json",
-                type: "DELETE",
-                data: JSON.stringify(model),
-                contentType: "application/json;charset=utf-8"
-            });
-        }
+        var model = this.dataItem($(e.target).closest("tr"));
+        var dataSource = $(e.target).closest(".k-grid").data("kendoGrid").dataSource;
+        dataSource.remove(model);
+        dataSource.sync();
     }
 }
 
