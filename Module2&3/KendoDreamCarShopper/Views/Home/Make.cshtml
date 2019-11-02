@@ -21,7 +21,10 @@
     <div class="row modelImageRow">
         <div class="span6 modelImageContainer">
             <a class="modelImage" href="/Home/Model/#= id #">
-                <img class="modelImage" src="#= thumbnailPath #" title="#= name #" alt="#= name #" />
+                <img class="modelImage"
+                     src="#= thumbnailPath ? thumbnailPath : 'http://placehold.it/253x171' #"
+                     title="#: name #"
+                     alt="#: name #" />
             </a>
         </div>
         <div>
