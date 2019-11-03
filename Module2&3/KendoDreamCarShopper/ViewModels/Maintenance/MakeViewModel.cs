@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using KendoDreamCarShopper.Models;
 
 namespace KendoDreamCarShopper.ViewModels.Maintenance {
@@ -17,12 +17,12 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
         [JsonProperty("imageUrl")]
         public string ImageUrl { get; set; }
 
-        public static MakeViewModel FromModel(Make model) {
+        public static MakeViewModel FromModel(Make make) {
             return new MakeViewModel {
-                Id = model.Id,
-                Name = model.Name,
-                Location = model.Location,
-                ImageUrl = model.ImageUrl
+                Id = make.Id,
+                Name = make.Name,
+                Location = make.Location,
+                ImageUrl = make.ImageUrl
             };
         }
     }

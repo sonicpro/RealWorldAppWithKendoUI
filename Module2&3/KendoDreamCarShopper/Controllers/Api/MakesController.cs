@@ -13,7 +13,9 @@ namespace KendoDreamCarShopper.Controllers.Api {
         [HttpGet]
         public IEnumerable<MakeViewModel> Get()
         {
-            return EntityStore.Makes.OrderBy(x => x.Name).AsEnumerable().Select(x => MakeViewModel.FromModel(x));
+            return EntityStore.Makes.OrderBy(x => x.Name)
+                .AsEnumerable()
+                .Select(x => MakeViewModel.FromModel(x));
         }
 
         [HttpGet]
@@ -35,19 +37,21 @@ namespace KendoDreamCarShopper.Controllers.Api {
         }
 
         [HttpPost]
-        public void Post(MakeViewModel viewModel)
+        public MakeViewModel Post(MakeViewModel viewModel)
         {
+            Make make;
             if (viewModel.Id == 0) {
-                Make make = new Make {Name = viewModel.Name, Location = viewModel.Location, ImageUrl = viewModel.ImageUrl};
+                make = new Make {Name = viewModel.Name, Location = viewModel.Location, ImageUrl = viewModel.ImageUrl};
                 EntityStore.Makes.Add(make);
             }
             else {
-                Make make = EntityStore.Makes.Find(viewModel.Id);
+                make = EntityStore.Makes.Find(viewModel.Id);
                 make.Name = viewModel.Name;
                 make.Location = viewModel.Location;
                 make.ImageUrl = viewModel.ImageUrl;
             }
             EntityStore.SaveChanges();
+            return MakeViewModel.FromModel(make);
         }
 
         [HttpDelete]

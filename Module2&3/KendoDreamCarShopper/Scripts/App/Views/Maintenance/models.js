@@ -84,7 +84,7 @@ function details(e) {
 function deleteModel(e) {
     if (confirm("Are you sure you want to delete this record?")) {
         var model = this.dataItem($(e.target).closest("tr"));
-        var dataSource = $(e.target).closest(".k-grid").data("kendoGrid").dataSource;
+        var dataSource = this.element.data("kendoGrid").dataSource;
         dataSource.remove(model);
         dataSource.sync();
     }
