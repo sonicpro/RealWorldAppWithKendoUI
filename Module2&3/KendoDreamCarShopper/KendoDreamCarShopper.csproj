@@ -176,6 +176,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\ApiControllerBase.cs" />
     <Compile Include="Controllers\Api\MakesController.cs" />
+    <Compile Include="Controllers\Api\ModelDetailController.cs" />
     <Compile Include="Controllers\Api\ModelImagesController.cs" />
     <Compile Include="Controllers\Api\ModelsController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
@@ -305,6 +306,7 @@
     <Content Include="Scripts\App\customBindings.js" />
     <Content Include="Scripts\App\Views\Home\index.js" />
     <Content Include="Scripts\App\Views\Home\make.js" />
+    <Content Include="Scripts\App\Views\Home\model.js" />
     <Content Include="Scripts\App\Views\Maintenance\modelDetails.js" />
     <Content Include="Scripts\App\Views\Maintenance\makes.js" />
     <Content Include="Scripts\App\Views\Maintenance\models.js" />
@@ -373,6 +375,7 @@
     <Content Include="Views\Maintenance\Makes.cshtml" />
     <Content Include="Views\Maintenance\ModelDetails.cshtml" />
     <Content Include="Views\Home\Make.cshtml" />
+    <Content Include="Views\Home\Model.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

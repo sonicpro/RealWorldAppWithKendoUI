@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Dream Car Shopper: Model";
+}
+
+<div id="modelDetailsMainContainer" class="row-fluid">
+    <div class="span6">
+        <img class="selectedModelImage" />
+        <div id="modelThumbnails"></div>
+    </div>
+</div>
+
+<script id="modelThumbnailTemplate" type="text/x-kendo-template">
+    <div class="thumbnailContainer span3">
+        <img class="thumbnail"
+             src="#= lowResolutionUrl #"
+             title="#= shortDescription #"
+             alt="#= shortDescription #" />
+    </div>
+</script>
+
+@section scripts
+{
+    <script src="~/Scripts/App/Views/Home/model.js"></script>
+}

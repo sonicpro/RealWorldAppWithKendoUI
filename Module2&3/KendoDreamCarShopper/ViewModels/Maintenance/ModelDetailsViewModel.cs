@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using KendoDreamCarShopper.Models;
 using KendoDreamCarShopper.ViewModels.Common;
@@ -41,7 +41,13 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
         public IList<ModelImageViewModel> Images { get; set; }
 
         [JsonProperty("makes")]
-        public IList<LookupItemViewModel> Makes { get; set; }
+        public IList<LookupItemViewModel> Makes { get; set; }
+
+        [JsonProperty("makeName")]
+        public string MakeName { get; set; }
+
+        [JsonProperty("makeImageUrl")]
+        public string MakeImageUrl { get; set; }
 
         public static ModelDetailsViewModel FromModel(Model model) {
             if (model == null) return new ModelDetailsViewModel{Images = new List<ModelImageViewModel>()};
@@ -56,7 +62,8 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
                 BreakHorsepower = model.BreakHorsepower,
                 TopSpeed = model.TopSpeed,
                 Description = model.Description,
-                Images = model.Images.Select(x => ModelImageViewModel.FromModel(x)).ToList()
+                Images = model.Images.Select(x => ModelImageViewModel.FromModel(x)).ToList(),
+                MakeName = model.Make.Name
             };
         }
 

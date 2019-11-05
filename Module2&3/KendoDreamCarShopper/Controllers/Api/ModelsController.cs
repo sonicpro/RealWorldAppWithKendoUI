@@ -35,7 +35,7 @@ namespace KendoDreamCarShopper.Controllers.Api {
             ModelDetailsViewModel viewModel = ModelDetailsViewModel.FromModel(EntityStore.Models.Include("Images").FirstOrDefault(x => x.Id == id));
             viewModel.Makes = EntityStore.Makes.Select(x => new LookupItemViewModel{Id = x.Id, Text = x.Name}).OrderBy(x=>x.Text).ToList();
             if (id == 0)
-                viewModel.MakeId = !makeId.HasValue ? (int?)null : (makeId.Value == 0?(int?)null: makeId.Value);
+                viewModel.MakeId = !makeId.HasValue ? null : (makeId.Value == 0 ? (int?)null : makeId.Value);
             return viewModel;
         }
 
