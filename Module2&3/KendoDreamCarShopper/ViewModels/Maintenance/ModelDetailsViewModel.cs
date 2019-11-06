@@ -41,12 +41,12 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
         public IList<ModelImageViewModel> Images { get; set; }
 
         [JsonProperty("makes")]
-        public IList<LookupItemViewModel> Makes { get; set; }
-
-        [JsonProperty("makeName")]
-        public string MakeName { get; set; }
-
-        [JsonProperty("makeImageUrl")]
+        public IList<LookupItemViewModel> Makes { get; set; }
+
+        [JsonProperty("makeName")]
+        public string MakeName { get; set; }
+
+        [JsonProperty("makeImageUrl")]
         public string MakeImageUrl { get; set; }
 
         public static ModelDetailsViewModel FromModel(Model model) {
@@ -63,7 +63,8 @@ namespace KendoDreamCarShopper.ViewModels.Maintenance {
                 TopSpeed = model.TopSpeed,
                 Description = model.Description,
                 Images = model.Images.Select(x => ModelImageViewModel.FromModel(x)).ToList(),
-                MakeName = model.Make.Name
+                MakeName = model.Make.Name,
+                MakeImageUrl = model.Make.ImageUrl
             };
         }
 
