@@ -1,5 +1,7 @@
 ﻿$(function () {
-    $("#make").kendoComboBox();
+    $("#make").kendoComboBox({
+        valuePrimitive: true
+    });
 
     $("#year").kendoNumericTextBox({
         decimals: 0,
